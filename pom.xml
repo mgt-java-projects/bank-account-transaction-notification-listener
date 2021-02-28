@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mgt.app</groupId>
-	<artifactId>bank-account-notification-listener</artifactId>
+	<artifactId>bank-account-transaction-notification-listener</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bank-account-notification-listener</name>
-	<description>Spring Kafka Listener application to consume client - account transaction events and store into database</description>
+	<description>Spring Kafka Listener application to consume client - account transaction events and store transaction records into database</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
