@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mgt.app</groupId>
 	<artifactId>bank-account-transaction-notification-listener</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bank-account-notification-listener</name>
+	<name>bank-account-transaction-notification-listener</name>
 	<description>Spring Kafka Listener application to consume client - account transaction events and store transaction records into database</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<bank.account.transaction.event.persist.version>0.0.1-SNAPSHOT</bank.account.transaction.event.persist.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>com.mgt.app</groupId>
+			<artifactId>bank-account-transaction-event-persist</artifactId>
+			<version>${bank.account.transaction.event.persist.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -25,7 +32,6 @@
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -36,6 +42,7 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
